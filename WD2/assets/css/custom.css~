@@ -1,0 +1,7 @@
+.table_1{
+background_color: red;
+}
+
+.objava{
+display: none;
+}

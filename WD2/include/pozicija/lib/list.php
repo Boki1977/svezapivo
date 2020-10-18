@@ -1,0 +1,6 @@
+<?php
+
+$pozicija=($obj->pozicija);
+
+
+?>

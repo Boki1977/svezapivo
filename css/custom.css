@@ -1,0 +1,40 @@
+/* Add here all your CSS customizations */
+
+/* font navigacije theme.css linija 1323*/
+
+
+a:top{
+	
+	color:white;
+}
+
+
+.top_info{
+	background-color:#f8f8f8;
+	
+	margin-bottom:1%;
+	padding-top:1%;
+	padding-bottom: 1%;
+}
+.top_info1{
+	color: black;
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+.top_info2{
+	color: gray;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-weight: 400;
+	
+}
+
+.price_bg{
+background: rgb(255,251,251);
+background: linear-gradient(90deg, rgba(255,251,251,0.32) 0%, rgba(176,174,174,0.17130602240896353) 100%);
+}
+
