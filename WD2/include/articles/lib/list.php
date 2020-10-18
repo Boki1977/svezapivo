@@ -42,10 +42,7 @@ $pogled_mobile=($obj->pogled_mobile);
 $komentari=($obj->komentari);
 $fotka_nova=($obj->fotka_nova);
 $galerija_nova=($obj->galerija_nova);
-
-
-$link="";
-
+$ext_link=($obj->ext_link);
 
 $kategorija_id=$subcategoryID;
 $potkategorija_id=$potkategorija;

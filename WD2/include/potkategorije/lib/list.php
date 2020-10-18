@@ -13,5 +13,7 @@ $potkat_fotka=($obj->potkat_fotka);
 $category_description=($obj->category_description);
 $kat_prefix=($obj->kat_prefix);
 $potkat_prefix=($obj->potkat_prefix);
+$potkat_ext_link=($obj->ext_link);
+
 
 ?>

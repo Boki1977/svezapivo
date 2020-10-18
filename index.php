@@ -1,5 +1,7 @@
 <?php
 include("conection.php");
+$page=$_GET['page'];
+$cat=$_GET['cat'];
 ?>
 
 <!DOCTYPE html>
@@ -32,35 +34,21 @@ include("conection.php");
 			<div role="main" class="main">
 				
 			<?php
-			include("include/page/naslovna/visual_box.php");
+			if($page==''){
+			include("include/page/naslovna/index.php");
+			}
+			
+			
+			if($page=='category'){
+			include("include/page/article/category.php");
+			}
+			
+			
 			?>
-				
-			<?php
-			include("include/page/naslovna/cat_middle.php");
-			?>
-				
-			<div class="container main shop py-4" style="margin-top:2%;">	
-			<div class="col-lg-12">
-
-							
-			<?php
-			include("include/page/naslovna/article_list.php");
-			?>						
-						
-								</div>
 							
 							
 							
-							
-							
-							
-				
-							
-							</div>
-							
-							
-							
-						</div>	
+			</div>	
 				
 			</div>	
 			

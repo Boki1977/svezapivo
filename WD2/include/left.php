@@ -125,7 +125,27 @@
                         </ul>
                     </li>
                     
-                  
+                  <li>
+                       <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-table"></i>
+                            <span class="menu-text"> Otprema i nalozi </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+                        
+                        <ul class="submenu">
+                            <li>
+                                <a href="?page=pregled_potkategorije">
+                                    <span class="menu-text">Nalozi za utovar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=unos_potkategorije">
+                                    <span class="menu-text">Dostava</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     
                 </ul>
                 <!-- /Sidebar Menu -->

@@ -1,6 +1,5 @@
-﻿<?php
+<?php
 
-$tablica="tblnewsarticles";
 	
 if(isset($_GET['radnja'])) 
 {
@@ -26,21 +25,13 @@ if(!empty($_POST['article_id'])){
 
 
 
-	if($user_status=='4')
-	{	
 	
 
-$results = $con->query("UPDATE $tablica SET status='2' WHERE articleID='$report_id'");	
+$results = $con->query("UPDATE tblnewsarticles SET status='2' WHERE articleID='$report_id'");	
+	
+	
 	
 
-	}
-		 
-		if($user_status=='3')
-	{	
-	
-$results = $con->query("UPDATE $tablica SET status='2' WHERE articleID='$report_id' AND authorID='$k_id'");		
-
-	}
 		 
 		 
 		  		
@@ -65,21 +56,14 @@ if(!empty($_POST['article_id'])){
 
 
 
-	if($user_status=='4')
-	{	
+
 	
 
-$results = $con->query("UPDATE $tablica SET status='1' WHERE articleID='$report_id'");	
+$results = $con->query("UPDATE tblnewsarticles SET status='1' WHERE articleID='$report_id'");	
 	
 
-	}
-		 
-		if($user_status=='3')
-	{	
 	
-$results = $con->query("UPDATE $tablica SET status='1' WHERE articleID='$report_id' AND authorID='$k_id'");		
 
-	}
 		 
 		 
 		  		
@@ -243,7 +227,7 @@ $results = $con->query("UPDATE $tablica SET status='1' WHERE articleID='$report_
                                                     Potkategorija
                                                 </th>
                                                 <th>
-                                                    Autor
+                                                    Br. pogleda
                                                 </th>
                                                 <th>
                                                     Datum
@@ -266,7 +250,7 @@ $results = $con->query("UPDATE $tablica SET status='1' WHERE articleID='$report_
                                    
 $result = $con->query("
 
-SELECT * FROM $tablica 
+SELECT * FROM tblnewsarticles 
 
 
 ORDER BY article_date DESC LIMIT 80
@@ -282,7 +266,7 @@ ORDER BY article_date DESC LIMIT 80
        
 $result = $con->query("
 
-SELECT * FROM $tablica 
+SELECT * FROM tblnewsarticles 
 WHERE subcategoryID='$kat_filter'
 AND potkategorija='$potkat_filter'
 ORDER BY article_date DESC 
@@ -385,17 +369,14 @@ ORDER BY article_date DESC
 <tr>  
  <td>  <label><input type="checkbox" name="article_id[<?php echo $ID; ?>]" id="<?php echo $ID; ?>" value="<?php echo $ID; ?>"><span class="text"></span></label></td>                     
  <td><?php echo $ID; ?></td>                                          
-<td><?php echo $article_title; ?><P>
-
-
-
-</td>
+<td><?php echo $article_title; ?></td>
 <td><?php echo $category_title; ?></td>
 <td><?php echo $category_title2; ?></td>
-<td><?php echo $article_author; ?></td>
+<td><?php echo $viewed_count; ?></td>
 <td class="center "><?php echo $article_date; ?></td>
 <td>
 <a href="?page=uredi_sadrzaj&id=<?php echo $ID; ?>" class="btn btn-info btn-xs"><i class="fa fa-edit"></i> Uredi</a>
+
 
 <?php echo $article_status; ?>
 

@@ -51,7 +51,7 @@
 																include("include/lib/potkategorija_shop_nav.php");
 															?>															
 																	<li class="dropdown-submenu">
-																		<a class="dropdown-item" href="#"><?php echo $naziv_nav; ?></a>																		
+																		<a class="dropdown-item" href="<?php echo $potkat_link; ?>"><?php echo $naziv_nav; ?></a>																		
 																	</li>
 																	
 															<?php

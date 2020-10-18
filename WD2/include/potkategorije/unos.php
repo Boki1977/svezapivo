@@ -89,7 +89,12 @@
                                                 
                                                
                                                 
-
+                                            <div class="form-group">
+                                                  
+                                                    <div class="col-lg-12"><label>Externi link</label>
+                                                        <input type="text" class="form-control" name="ext_link" placeholder="Externi link"/>
+                                                    </div>
+                                                </div>
                                                 
 
                                                 

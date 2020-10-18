@@ -15,7 +15,7 @@
 		while ($obj=mysqli_fetch_object($result))
  
 		{
-			include("include/lib/article.php");
+			include("include/lib/proizvodi.php");
 		?>
 						
 							<div class="col-12 col-sm-6 col-lg-3 product">

@@ -14,5 +14,5 @@ $category_description=($obj->category_description);
 $menu=($obj->menu);
 $kat_prefix=($obj->kat_prefix);
 
-
+$ext_link=($obj->ext_link);
 ?>

@@ -8,7 +8,8 @@ categoryID,
 category_title,
 potkat_fotka,
 category_description,
-potkat_prefix
+potkat_prefix,
+ext_link
 
 
 ) 
@@ -20,7 +21,8 @@ VALUES
 '$category_title',
 '$potkat_fotka',
 '$category_description',
-'$potkat_prefix'
+'$potkat_prefix',
+'$ext_link'
 
 
 )

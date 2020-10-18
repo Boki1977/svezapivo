@@ -11,8 +11,8 @@ categoryID='$categoryID',
 category_title='$category_title',
 potkat_fotka='$potkat_fotka',
 category_description='$category_description',
-potkat_prefix='$potkat_prefix'
-
+potkat_prefix='$potkat_prefix',
+ext_link='$ext_link'
 
 
 

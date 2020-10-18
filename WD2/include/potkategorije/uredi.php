@@ -35,7 +35,7 @@ WHERE categoryID='$categoryID'
     }
 
 ?>
- 
+
  <form id="registrationForm" method="post" action="update_potkategorije.php?id=<?php echo $id; ?>"
                                                   data-bv-message="This value is not valid"
                                                   data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
@@ -126,7 +126,12 @@ WHERE categoryID='$categoryID'
                                                
                                                 
 
-                                                
+                                            <div class="form-group">
+                                                  
+                                                    <div class="col-lg-12"><label>Externi link</label>
+                                                        <input type="text" class="form-control" name="ext_link" placeholder="Externi link" value="<?php echo $potkat_ext_link; ?>"/>
+                                                    </div>
+                                                </div>
 
                                                 
                                                

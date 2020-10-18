@@ -40,11 +40,9 @@
                                                                data-bv-notempty-message="Obavezan unos" />
                                                     </div>
                                                     </div>
-                                                     <div class="form-group">
+                                                <div class="form-group">
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" name="article_extra" placeholder="Nad naslov" name="article_extra"
-                                                               data-bv-notempty="true"
-                                                               data-bv-notempty-message="Obavezan unos" />
+                                                        <input type="text" class="form-control" name="article_extra" placeholder="Nad naslov" name="article_extra"/>
                                                     </div>
                                                 </div>
                                                 
@@ -173,7 +171,14 @@
                                             </select>
                                                     </div>
                                                     </div>
-
+                                                    
+                                                    
+                                           <div class="form-group">
+                                                    <div class="col-lg-12">
+                                                        <label>Externi link</label>
+                                                        <input type="text" class="form-control" name="ext_link" placeholder="Externi link"/>
+                                                    </div>
+                                                </div>
                                                 
                                                
                                            

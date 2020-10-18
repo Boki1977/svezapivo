@@ -39,7 +39,7 @@
                                                                data-bv-notempty="true"
                                                                data-bv-notempty-message="Obavezan unos" />
                                                     </div>
-                                                    </div>
+                                                </div>
                                                      
                                                 
                                                 <div class="form-group">
@@ -50,7 +50,12 @@
                                                 </div>
                                                 
                                                
-                                                
+                                                <div class="form-group">
+                                                  
+                                                    <div class="col-lg-12"><label>Externi link</label>
+                                                        <input type="text" class="form-control" name="ext_link" placeholder="Externi link"/>
+                                                    </div>
+                                                </div>
                                                 
 
                                                 

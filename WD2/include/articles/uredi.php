@@ -81,9 +81,7 @@ list($sat2,$minuta2,$sekunda2)=$vrijeme2;
                                                     </div>
                                                      <div class="form-group">
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" name="article_extra" placeholder="Nad naslov" name="article_extra"
-                                                               data-bv-notempty="true"
-                                                               data-bv-notempty-message="Obavezan unos" value="<?php echo $article_extra; ?>"/>
+                                                        <input type="text" class="form-control" name="article_extra" placeholder="Nad naslov" name="article_extra" value="<?php echo $article_extra; ?>"/>
                                                     </div>
                                                 </div>
                                                 
@@ -318,7 +316,15 @@ list($sat2,$minuta2,$sekunda2)=$vrijeme2;
                                             </select>
                                                     </div>
                                                     </div>
-
+                                             
+                                             
+                                             
+                                              <div class="form-group">
+                                                    <div class="col-lg-12">
+                                                        <label>Externi link</label>
+                                                        <input type="text" class="form-control" name="ext_link" placeholder="Externi link" value="<?php echo $ext_link; ?>"/>
+                                                    </div>
+                                                </div>
                                                 
                                                
                                            

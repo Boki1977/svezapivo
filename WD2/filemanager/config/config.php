@@ -66,7 +66,7 @@ $config = array(
 	| with start and final /
 	|
 	*/
-	'upload_dir' => '/pivo/data/source/',
+	'upload_dir' => '/svezapivo/novi/data/source/',
 
 	/*
 	|--------------------------------------------------------------------------

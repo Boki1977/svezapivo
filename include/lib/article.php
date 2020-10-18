@@ -1,39 +1,65 @@
 <?php
-$id=($obj->id);
-$sifra=($obj->sifra);
-$kategorija=($obj->kategorija);
+$articleID=($obj->articleID);
+$subcategoryID=($obj->subcategoryID);
 $potkategorija=($obj->potkategorija);
-$naziv=($obj->naziv);
-$opis=($obj->opis);
-$kolicina=($obj->kolicina);
-$tezina=($obj->tezina);
-$cijena=($obj->cijena);
-$akcija=($obj->akcija);
-$fotka=($obj->fotka);
-$galerija=($obj->galerija);
+$kat_prefix=($obj->kat_prefix);
+$potkat_prefix=($obj->potkat_prefix);
+$article_title=($obj->article_title);
+$article_prefix=($obj->article_prefix);
+$article_description=($obj->article_description);
+$image_description=($obj->image_description);
+$article_extra=($obj->article_extra);
+$article_author=($obj->article_author);
+$article_type=($obj->article_type);
+$article_date=($obj->article_date);
+$datum=($obj->datum);
 $status=($obj->status);
-$pozicija=($obj->pozicija);
-$naziv_seo=($obj->naziv_seo);
+$image_extension=($obj->image_extension);
+$article_html=($obj->article_html);
+$lang=($obj->lang);
+$userIP=($obj->userIP);
+$expiration_date=($obj->expiration_date);
+$korisnik=($obj->korisnik);
+$allow_comment=($obj->allow_comment);
+$galerija_thumb=($obj->galerija_thumb);
+$galerija_id=($obj->galerija_id);
+$stara_galerija=($obj->stara_galerija);
+$stara_galerija2=($obj->stara_galerija2);
+$viewed_count=($obj->viewed_count);
+$authorID=($obj->authorID);
+$meta_tagovi=($obj->meta_tagovi);
+$anketa=($obj->anketa);
+$najave=($obj->najave);
+$oznake=($obj->oznake);
+$pogled_dan=($obj->pogled_dan);
+$pogled_tjedan=($obj->pogled_tjedan);
+$pogled_mjesec=($obj->pogled_mjesec);
+$br_komentara=($obj->br_komentara);
+$video=($obj->video);
+$pozicija_pocetak=($obj->pozicija_pocetak);
+$pozicija_kraj=($obj->pozicija_kraj);
+$pogled_mobile=($obj->pogled_mobile);
+$komentari=($obj->komentari);
+$fotka_nova=($obj->fotka_nova);
+$galerija_nova=($obj->galerija_nova);
+$ext_link=($obj->ext_link);
 
-$opis_artikla=($obj->opis);
 
-if($akcija!='')
-{
-$cijena=$akcija;
-$stara_cijena=$cijena;
+$opis=substr($article_html,0,120);
+
+$opis= strip_tags($opis);
+
+
+if ($ext_link==''){
+$link="$path/sadrzaj/$kat_prefix-$potkat_prefix-$article_prefix-$articleID";
+
 }
+
 else{
-$cijena=$cijena;
-}
+ $link=$ext_link;
+}    
 
 
-$fotka_nova = explode("/data/",$fotka); 
-list($otpadak,$fotografija_path)=$fotka_nova; 
-$fotka_nova="data/$fotografija_path";  
-
-// thumb fotke
-$fotka_thumb = explode("/source/",$fotka_nova); 
-list($otpadak,$fotka)=$fotka_thumb; 
 
 
 

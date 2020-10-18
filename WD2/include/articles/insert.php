@@ -28,7 +28,8 @@ pozicija_pocetak,
 pozicija_kraj,
 komentari,
 fotka_nova,
-galerija_nova
+galerija_nova,
+ext_link
 
 
 ) 
@@ -60,7 +61,8 @@ VALUES
 '$pozicija_kraj',
 '$komentari',
 '$fotka_nova',
-'$galerija_nova'
+'$galerija_nova',
+'$ext_link'
 
 
 )

@@ -36,7 +36,8 @@ pozicija_pocetak='$pozicija_pocetak',
 pozicija_kraj='$pozicija_kraj',
 komentari='$komentari',
 fotka_nova='$fotka_nova',
-galerija_nova='$galerija_nova'
+galerija_nova='$galerija_nova',
+ext_link='$ext_link'
 
 
 

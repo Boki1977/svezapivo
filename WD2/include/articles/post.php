@@ -18,7 +18,7 @@ $pozicija_kraj=$_POST['pozicija_kraj'];
 $komentari=$_POST['komentari'];
 $fotka_nova=$_POST['fotka_nova'];
 $galerija_nova=$_POST['galerija_nova'];
-
+$ext_link=$_POST['ext_link'];
 
 $potkategorija_trenutna=$_POST['potkategorija_trenutna'];
 

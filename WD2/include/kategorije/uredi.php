@@ -1,6 +1,8 @@
 <?php
 (int)$id = ( isset( $_GET["id"] ) ? $_GET["id"] : 0 );
 
+
+
 $result = $con->query("
 
 SELECT * FROM tblnewscategories
@@ -20,7 +22,7 @@ WHERE categoryID='$id'
 
 
 ?>
- 
+
  <form id="registrationForm" method="post" action="update_kategorije.php?id=<?php echo $id; ?>"
                                                   data-bv-message="This value is not valid"
                                                   data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
@@ -74,7 +76,12 @@ WHERE categoryID='$id'
                                                 
                                                 
 
-                                                
+                                                <div class="form-group">
+                                                  
+                                                    <div class="col-lg-12"><label>Externi link</label>
+                                                        <input type="text" class="form-control" name="ext_link" placeholder="Externi link" value="<?php echo $ext_link; ?>"/>
+                                                    </div>
+                                                </div>
                                                
                                                 
 

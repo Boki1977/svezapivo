@@ -1,10 +1,18 @@
 <?php
-$id=($obj->id);
-$kategorija_id=($obj->kategorija_id);
-$kategorija_naziv=($obj->kategorija_naziv);
-$opis=($obj->opis);
-$naziv=($obj->naziv);
+$subcategoryID=($obj->subcategoryID);
+$categoryID=($obj->categoryID);
+$category_title=($obj->category_title);
+$img=($obj->img);
+$redosljed=($obj->redosljed);
+$sort_order=($obj->sort_order);
+$broj_vijesti=($obj->broj_vijesti);
+$header_image_extension=($obj->header_image_extension);
+$section_image_extension=($obj->section_image_extension);
+$category_name=($obj->category_name);
+$potkat_fotka=($obj->potkat_fotka);
+$category_description=($obj->category_description);
+$kat_prefix=($obj->kat_prefix);
 $potkat_prefix=($obj->potkat_prefix);
-$potkat_fotka=($obj->fotografija);
+$ext_link=($obj->ext_link);
 
 ?>
