@@ -1,7 +1,14 @@
 <?php
+session_start(); 
 include("conection.php");
 $page=$_GET['page'];
 $cat=$_GET['cat'];
+
+if($page=="cart"){
+include("include/page/cart/cart_sesion.php");
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +18,7 @@ $cat=$_GET['cat'];
 	?>
 	<body>
 
-		<div class="body">
+		<div class="body <?php if($page=="cart"){ echo "shop"; } ?>">
 			<header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
 				<div class="header-body border-top-0">
 					<?php
@@ -42,8 +49,12 @@ $cat=$_GET['cat'];
 			if($page=='category'){
 			include("include/page/article/category.php");
 			}
-			
-			
+			if($page=='article'){
+			include("include/page/article/index.php");
+			}
+			if($page=='cart'){
+			include("include/page/cart/index.php");
+			}
 			?>
 							
 							

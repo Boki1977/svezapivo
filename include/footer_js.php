@@ -22,7 +22,7 @@
 		<script src="js/theme.js"></script>
 
 		<!-- Current Page Vendor and Views -->
-		<script src="js/views/view.shop.js"></script>
+	
 
 		<!-- Theme Custom -->
 		<script src="js/custom.js"></script>
@@ -40,3 +40,24 @@
 			ga('create', 'UA-12345678-1', 'auto');
 			ga('send', 'pageview');
 		</script>
+		
+			<script src="./js/BUP.js" type="text/javascript" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.laftImg').BUP('rightImg', 1)
+			$('.rightImg').BUP('laftImg', 1)
+    })
+
+		function oneX() {
+			$('.laftImg').BUP('rightImg', 1)
+			$('.rightImg').BUP('laftImg', 1)
+		}
+		function twoX() {
+			$('.laftImg').BUP('rightImg', 0.5)
+			$('.rightImg').BUP('laftImg', 0.5)
+		}
+		function threeX() {
+			$('.laftImg').BUP('rightImg', 1.5)
+			$('.rightImg').BUP('laftImg', 1.5)
+		}
+	</script>

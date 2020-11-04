@@ -25,7 +25,7 @@ $stara_cijena=$cijena;
 else{
 $cijena=$cijena;
 }
-
+$cijena =  number_format($cijena, 2, ',', '.');
 
 $fotka_nova = explode("/data/",$fotka); 
 list($otpadak,$fotografija_path)=$fotka_nova; 
@@ -35,6 +35,15 @@ $fotka_nova="data/$fotografija_path";
 $fotka_thumb = explode("/source/",$fotka_nova); 
 list($otpadak,$fotka)=$fotka_thumb; 
 
+$article_link="?page=article&id=$id";
 
 
+$cart_link="add_to_cart.php?id=$id&action=add&radnja=redirect";
+
+
+
+$ukupno=$quantity*$cijena;
+$ukupno =  number_format($ukupno, 2, ',', '.');
+$ukupno2=$quantity*$cijena;
+$total = $total + $ukupno2
 ?>
