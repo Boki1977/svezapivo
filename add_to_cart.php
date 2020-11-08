@@ -32,16 +32,3 @@ if($action=="delete"){
 $_SESSION["broj_komada"] = $counter;
 $_SESSION["quantity"] = $sum;
 
-
-
-if($radnja=="redirect")
-{
-?>
-<script type="text/javascript">
-
-document.location = "javascript:history.back()";
-
-</script>
-<?php
-}
-?>

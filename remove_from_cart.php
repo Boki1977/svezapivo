@@ -5,4 +5,6 @@ $kolicina = $_GET['quantity'];	 //the product id from the URL
 unset($_SESSION['cart'][$product_id]);
 
 $_SESSION["quantity"] = $_SESSION["quantity"]-$kolicina;
+
+
 ?>

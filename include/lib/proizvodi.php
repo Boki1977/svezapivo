@@ -24,6 +24,8 @@ $stara_cijena=$cijena;
 }
 else{
 $cijena=$cijena;
+$cijena2=$cijena;
+
 }
 $cijena =  number_format($cijena, 2, ',', '.');
 
@@ -45,5 +47,7 @@ $cart_link="add_to_cart.php?id=$id&action=add&radnja=redirect";
 $ukupno=$quantity*$cijena;
 $ukupno =  number_format($ukupno, 2, ',', '.');
 $ukupno2=$quantity*$cijena;
-$total = $total + $ukupno2
+$total = $total + $ukupno2;
+
+$total =  number_format($total, 2, ',', '.');
 ?>

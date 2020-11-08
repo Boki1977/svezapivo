@@ -3,7 +3,17 @@ session_start();
 include("conection.php");
 
 ?>
+<style>
 
+.plus_click{
+font-weight: bold;
+color: red;
+}
+.minus_click{
+font-weight: bold;
+color: red;
+}
+</style>
 <div class="row" id="cart_list">
 						<div class="col">
 
@@ -23,16 +33,16 @@ include("conection.php");
 																	&nbsp;
 																</th>
 																<th class="product-name">
-																	Product
+																	Naziv
 																</th>
 																<th class="product-price">
-																	Price
+																	Cijena
 																</th>
 																<th class="product-quantity">
-																	Quantity
+																	Količina
 																</th>
 																<th class="product-subtotal">
-																	Total
+																	Ukupno
 																</th>
 															</tr>
 														</thead>
@@ -73,29 +83,32 @@ include("conection.php");
 																	<a href="<?php echo $article_link; ?>"><?php echo $naziv; ?></a>
 																</td>
 																<td class="product-price">
-																	<span class="amount"><?php echo $cijena; ?> Kn</span>
+																	<span class="amount"><?php echo $cijena; ?> </span>
+																	<input type="hidden" id="cijena_<?php echo $id; ?>" name="cijena" value="<?php echo $cijena2; ?>">
 																</td>
 																<td class="product-quantity">
 																	
 																		<div class="quantity">
-																			<input type="button" class="minus" value="-">
-																			<input type="text" class="input-text qty text" title="Qty" value="<?php echo $quantity; ?>" name="quantity" min="1" step="1" id="quantyty_[<?php echo $id; ?>">
-																			<input type="button" class="plus" value="+">
+																			<input type="button" class="minus mijenjanje" id="<?php echo $id; ?>" value="-">
+																			<input type="text" class="input-text qty text" title="Qty" value="<?php echo $quantity; ?>" name="quantity" min="1" step="1" id="kolicina_<?php echo $id; ?>" proizvod="<?php echo $id; ?>">
+																			<input type="button" class="plus mijenjanje" id="<?php echo $id; ?>" value="+">
 																		</div>
 																	
 																</td>
-																<td class="product-subtotal">
-																	<span class="amount"><?php echo $ukupno; ?> Kn</span>
+																<td class="product-subtotal" >
+																	<span class="amount" id="ukupno_<?php echo $id; ?>"><?php echo $ukupno; ?> </span>
+																
 																</td>
 															</tr>
 															
 															<?php
+															$counter++;
 															}
 															?>
 															<tr>
 																<td class="actions" colspan="6">
 																	<div class="actions-continue">
-																		<div value="Osvježi" name="update_cart" class="btn btn-xl btn-light pr-4 pl-4 text-2 font-weight-semibold text-uppercase update">Osvježi</div>
+																		<div value="Osvježi" name="update_cart" class="btn btn-xl btn-light pr-4 pl-4 text-2 font-weight-semibold text-uppercase update" count="<?php echo $counter; ?>">Zaključi</div>
 																	</div>
 																</td>
 															</tr>
@@ -116,13 +129,88 @@ include("conection.php");
 															
 															});	
 
+															$('.mijenjanje').click(function() {
+															var proizvod = $(this).attr('id');
+															var kolicina = $("#kolicina_"+proizvod).val();
+															var cijena = $("#cijena_"+proizvod).val();
+															
+															var ukupno=cijena*kolicina;																														
+															var ukupno=parseFloat(ukupno).toFixed(2); //12.23
+															
+															
+																
+															$('#ukupno_'+proizvod).text(ukupno);
 
+															
+															
+															
+															$.ajax({
+															type: 'GET',
+															url: 'update_cart.php?action=delete&proizvod='+proizvod+'&kolicina='+kolicina,
+															  
+															});
+															
+															});
+															
+															$('.plus').click(function() {
+															var proizvod = $(this).attr('id');
+															
+															
+															$('#ukupno_'+proizvod).addClass("plus_click");
+															
+													
+													
+															setTimeout(function() {
+															$('#ukupno_'+proizvod).removeClass("plus_click");
+														    }, 800);
+															
+															});
+															
+															
+															$('.minus').click(function() {
+															var proizvod = $(this).attr('id');
+															
+															$('#ukupno_'+proizvod).addClass("minus_click");
+															
+													
+													
+															setTimeout(function() {
+															$('#ukupno_'+proizvod).removeClass("minus_click");
+														    }, 800);
+															
+															});
 															
 															});
 															</script>
 														</tbody>
 													</table>
-												</form>
+													<table class="cart-totals">
+													<tbody>
+														
+														<script language="javascript" type="text/javascript">
+
+														
+														
+														var timeout = setInterval(CartTotal, 1000);    
+														function CartTotal () {
+														$('#cart_total').load('cart_total.php');
+														}
+														
+														
+														
+														</script>
+														<tr class="total">
+															<th>
+																<strong class="text-dark">Narudžba Ukupno</strong>
+															</th>
+															<th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+															<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+															<td>
+																<strong class="text-dark"><span class="amount" id="cart_total"></span></strong>
+															</td>
+														</tr>
+													</tbody>
+												</table>
 											</div>
 										</div>	
 										<script src="js/views/view.shop.js"></script>
@@ -130,79 +218,6 @@ include("conection.php");
 								</div>
 							</div>
 
-							<div class="featured-boxes">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="featured-box featured-box-primary text-left mt-3 mt-lg-4">
-											<div class="box-content">
-												<h4 class="color-primary font-weight-semibold text-4 text-uppercase mb-3">Calculate Shipping</h4>
-
-												<form action="/" id="frmCalculateShipping" method="post">
-													<div class="form-row">
-														<div class="form-group col">
-															<label class="font-weight-bold text-dark">Country</label>
-															<select class="form-control">
-																<option value="">Select a country</option>
-															</select>
-														</div>
-													</div>
-													<div class="form-row">
-														<div class="form-group col-lg-6">
-															<label class="font-weight-bold text-dark">State</label>
-															<input type="text" value="" class="form-control">
-														</div>
-														<div class="form-group col-lg-6">
-															<label class="font-weight-bold text-dark">Zip Code</label>
-															<input type="text" value="" class="form-control">
-														</div>
-													</div>
-													<div class="form-row">
-														<div class="form-group col">
-															<input type="submit" value="Update Totals" class="btn btn-xl btn-light pr-4 pl-4 text-2 font-weight-semibold text-uppercase" data-loading-text="Loading...">
-														</div>
-													</div>
-												</form>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="featured-box featured-box-primary text-left mt-3 mt-lg-4">
-											<div class="box-content">
-												<h4 class="color-primary font-weight-semibold text-4 text-uppercase mb-3">Cart Totals</h4>
-												<table class="cart-totals">
-													<tbody>
-														<tr class="cart-subtotal">
-															<th>
-																<strong class="text-dark">Cart Subtotal</strong>
-															</th>
-															<td>
-																<strong class="text-dark"><span class="amount">$431</span></strong>
-															</td>
-														</tr>
-														<tr class="shipping">
-															<th>
-																Shipping
-															</th>
-															<td>
-																Free Shipping<input type="hidden" value="free_shipping" id="shipping_method" name="shipping_method">
-															</td>
-														</tr>
-														<tr class="total">
-															<th>
-																<strong class="text-dark">Order Total</strong>
-															</th>
-															<td>
-																<strong class="text-dark"><span class="amount">$431</span></strong>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
 
 							<div class="row">
 								<div class="col">
