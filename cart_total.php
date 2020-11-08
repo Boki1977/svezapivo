@@ -3,8 +3,6 @@
 <?php include("conection.php"); ?>
 <?php
 
-
-
 foreach($_SESSION['cart'] as $product_id => $quantity) {
 
 	
